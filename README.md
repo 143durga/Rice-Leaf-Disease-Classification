@@ -1,33 +1,36 @@
 "# Rice-Leaf-Disease-Classification" 
 Rice Leaf Disease Classification 🌾
-This repository contains a machine learning-based project designed to classify diseases in rice leaves from images. The aim is to aid farmers and agricultural experts in diagnosing diseases quickly and accurately, enhancing productivity and minimizing crop losses.
+This repository contains the implementation of a machine learning project to detect and classify diseases in rice leaves. By leveraging image processing and neural networks, the model aims to assist in diagnosing diseases, improving agricultural productivity.
 
 🚀 Features
-Disease Detection: Identifies common diseases affecting rice leaves.
-Image-Based Analysis: Uses image processing and machine learning techniques.
-User-Friendly Interface: Upload images to analyze leaf conditions effortlessly.
-Scalable: Can be extended for additional crops and diseases.
-📂 Project Structure
+Disease Detection: Automatically classifies diseases from rice leaf images.
+Model Deployment: Supports TensorFlow Serving for real-time predictions.
+Frontend Integration: A web-based frontend for user interaction and predictions.
+Comprehensive Workflow: Includes data preprocessing, training, and deployment scripts.
+📂 Repository Structure
 bash
 Copy code
 Rice-Leaf-Disease-Classification/
-├── data/               # Dataset of rice leaf images
-├── notebooks/          # Jupyter notebooks for exploration and modeling
-├── src/                # Source code for application logic
-│   ├── preprocessing/  # Scripts for image preprocessing
-│   ├── training/       # Scripts for model training
-│   ├── inference/      # Scripts for making predictions
-│   └── app.py          # Main application script
-├── models/             # Trained machine learning models
-├── requirements.txt    # Python dependencies
-├── README.md           # Project documentation
-└── LICENSE             # License file
+├── .idea/                  # IDE configuration files
+├── .ipynb_checkpoints/     # Jupyter notebook checkpoints
+├── Rice_Versions/          # Versioned rice-related resources
+├── __pycache__/            # Python bytecode cache
+├── frontend/               # Frontend code for the application
+├── model/                  # Scripts and files related to the model
+├── models/                 # Saved machine learning models
+├── rice_images/            # Dataset of rice leaf images
+├── .gitattributes          # Git configuration for handling text files
+├── MyComponent.js          # JavaScript component for the frontend
+├── README.md               # Project documentation
+├── main tf-serving.py      # TensorFlow Serving script for model deployment
+├── main.py                 # Main script for running the application
+├── training.ipynb          # Jupyter notebook for model training
 🛠️ Installation
 Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/Rice-Leaf-Disease-Classification.git
+git clone https://github.com/143durga/Rice-Leaf-Disease-Classification.git
 cd Rice-Leaf-Disease-Classification
 Set up a virtual environment:
 
@@ -40,57 +43,34 @@ Install dependencies:
 bash
 Copy code
 pip install -r requirements.txt
-Prepare the dataset:
+Prepare the dataset: Place your rice leaf images in the rice_images/ directory.
 
-Place the rice leaf images in the data/ directory.
-If the dataset is hosted online, include download instructions or scripts.
 🖥️ Usage
-Preprocess the data:
+1. Training the Model:
+Open training.ipynb in Jupyter Notebook and run the cells step-by-step to train the model.
+
+2. Serving the Model:
+Use TensorFlow Serving for real-time predictions:
 
 bash
 Copy code
-python src/preprocessing/preprocess_data.py
-Train the model:
+python main tf-serving.py
+3. Running the Application:
+Start the application to interact with the model via the frontend:
 
 bash
 Copy code
-python src/training/train_model.py
-Evaluate the model:
-
-bash
-Copy code
-python src/inference/evaluate_model.py
-Run the application:
-
-bash
-Copy code
-python src/app.py
-Access the app at http://localhost:5000 in your browser.
-
-📊 Dataset Details
-The dataset includes labeled images of rice leaves in the following categories:
-
-Healthy
-Disease A
-Disease B
-Disease C
-Ensure proper labeling before training.
-
+python main.py
 🛠️ Technologies Used
 Python: Core programming language
-Machine Learning: TensorFlow, Keras
-Image Processing: OpenCV
-Visualization: Matplotlib, Seaborn
-Web Framework: Flask/Django
+TensorFlow & Keras: Machine learning and deep learning
+Flask/Django: Backend framework for model integration
+JavaScript & React: Frontend for user interface
+Jupyter Notebooks: Interactive model training
 📈 Results
-The trained model achieved:
-
-Accuracy: X%
-Precision: X%
-Recall: X%
-Detailed metrics and visualizations are available in the notebooks/ directory.
+The model achieves a classification accuracy of X% on the validation dataset. Evaluation metrics are documented in training.ipynb.
 
 🌟 Future Enhancements
-Include additional datasets for better model generalization.
-Deploy as a cloud-based or mobile application.
-Enable real-time disease prediction using edge devices.
+Add more rice leaf disease categories.
+Integrate the system with a mobile app for portability.
+Optimize the model for edge devices like smartphones.
